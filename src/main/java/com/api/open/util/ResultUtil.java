@@ -15,6 +15,14 @@ public class ResultUtil {
         return toObject(400, "失败!", data);
     }
 
+    public static ResultModel toFail(int code, String message) {
+        return toObject(code, message, null);
+    }
+
+    public static ResultModel toFail(String message, Object data) {
+        return toObject(400, message, data);
+    }
+
     public static ResultModel toObject(int code, String message, Object data) {
         ResultModel model = new ResultModel();
         model.setCode(code);
