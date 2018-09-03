@@ -26,7 +26,7 @@ public class AllControllerAdvice {
     }
 
     /**
-     * 拦截捕捉自定义异常 MyException.class
+     * 拦截捕捉自定义异常 NoDataException.class
      *
      * @param ex
      * @return
