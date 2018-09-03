@@ -22,6 +22,7 @@ public class TestController {
     @RequestMapping(value = "test")
     public ResultModel getTestContent() {
         List<TestModel> testContent = testMapper.selectTestContent();
+        //throw new NoDataException(606,"我错误拉。");
         return ResultUtil.toSuccess(testContent);
     }
 }

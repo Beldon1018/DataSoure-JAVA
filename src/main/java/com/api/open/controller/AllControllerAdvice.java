@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by 003 on 2018/9/3.
  */
@@ -21,8 +23,8 @@ public class AllControllerAdvice {
      */
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
-    public ResultModel errorHandler(Exception ex) {
-        return ResultUtil.toFail(ex.getMessage(), null);
+    public ResultModel errorHandler(HttpServletRequest req, Exception ex) {
+        return ResultUtil.toFail(ex.getMessage(), req.getRequestURL());
     }
 
     /**
@@ -33,8 +35,8 @@ public class AllControllerAdvice {
      */
     @ResponseBody
     @ExceptionHandler(value = NoDataException.class)
-    public ResultModel myErrorHandler(NoDataException ex) {
-        return ResultUtil.toFail(ex.getCode(), ex.getMessage());
+    public ResultModel myErrorHandler(HttpServletRequest req, NoDataException ex) {
+        return ResultUtil.toObject(ex.getCode(), ex.getMsg(), req.getRequestURL());
     }
 
 }
