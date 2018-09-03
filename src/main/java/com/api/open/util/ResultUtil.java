@@ -27,7 +27,7 @@ public class ResultUtil {
         ResultModel model = new ResultModel();
         model.setCode(code);
         model.setMessage(message);
-        model.setData(data);
+        model.setResult(data);
         return model;
     }
 

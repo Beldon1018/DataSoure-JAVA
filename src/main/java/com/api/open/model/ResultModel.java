@@ -7,7 +7,7 @@ public class ResultModel {
 
     private int code;
     private String message;
-    private Object data;
+    private Object result;
 
     public int getCode() {
         return code;
@@ -25,11 +25,11 @@ public class ResultModel {
         this.message = message;
     }
 
-    public Object getData() {
-        return data;
+    public Object getResult() {
+        return result;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void setResult(Object result) {
+        this.result = result;
     }
 }
