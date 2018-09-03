@@ -48,9 +48,17 @@
 			<version>1.11.2</version>
 		</dependency>
 
+		<!--mysql-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
+		<finalName>ApiOpen</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
