@@ -12,7 +12,7 @@ public class ResultUtil {
     }
 
     public static ResultModel toFail(Object data) {
-        return toObject(200, "成功!", data);
+        return toObject(400, "失败!", data);
     }
 
     public static ResultModel toObject(int code, String message, Object data) {
