@@ -30,6 +30,7 @@ public class DefaultServerMinaHandler extends IoHandlerAdapter {
         System.out.println("客户端[" + session.getRemoteAddress() + "]：已连接");
         Message mes = new Message();
         mes.setId(session.getId());
+        mes.setType(Message.ONLINE);
         mes.setName(sim.format(new Date()));
         mes.setContent("用户" + session.getId() + "上线了");
         sendToAll(mes, session);
@@ -42,6 +43,7 @@ public class DefaultServerMinaHandler extends IoHandlerAdapter {
         sessions.remove(session.getId());
         Message mes = new Message();
         mes.setId(session.getId());
+        mes.setType(Message.OFF_LINE);
         mes.setName(sim.format(new Date()));
         mes.setContent("用户" + session.getId() + "下线了");
         sendToAll(mes, session);

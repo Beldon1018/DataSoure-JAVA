@@ -32,7 +32,7 @@ public class MinaClient {
         nioSocketConnector.setConnectTimeoutMillis(10000);
 
         /**连接一个服务端*/
-        ConnectFuture connectFuture = nioSocketConnector.connect(new InetSocketAddress("localhost", 9999));
+        ConnectFuture connectFuture = nioSocketConnector.connect(new InetSocketAddress("47.100.122.205", 9999));
 
         /**等待连接成功*/
         connectFuture.awaitUninterruptibly();
