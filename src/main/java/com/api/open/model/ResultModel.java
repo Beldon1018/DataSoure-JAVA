@@ -1,9 +1,11 @@
 package com.api.open.model;
 
+import java.io.Serializable;
+
 /**
  * Created by 003 on 2018/9/3.
  */
-public class ResultModel {
+public class ResultModel implements Serializable{
 
     private int code;
     private String message;
