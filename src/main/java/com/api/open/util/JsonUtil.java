@@ -25,6 +25,10 @@ public class JsonUtil {
         return toJson(400, message, data);
     }
 
+    public static String toJson(Object obj) {
+        return mGson.toJson(obj);
+    }
+
     public static String toJson(int code, String message, Object data) {
         ResultModel model = new ResultModel();
         model.setCode(code);
