@@ -15,6 +15,7 @@ public class Message implements Serializable {
     private String name;
     private String time;
     private String content;
+    private int count;
 
     public String getId() {
         return id;
@@ -56,6 +57,14 @@ public class Message implements Serializable {
         this.content = content;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     @Override
     public String toString() {
         return "Message{" +
@@ -64,6 +73,7 @@ public class Message implements Serializable {
                 ", name='" + name + '\'' +
                 ", time='" + time + '\'' +
                 ", content='" + content + '\'' +
+                ", count=" + count +
                 '}';
     }
 }

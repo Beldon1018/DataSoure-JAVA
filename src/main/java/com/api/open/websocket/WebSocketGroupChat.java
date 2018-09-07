@@ -38,6 +38,7 @@ public class WebSocketGroupChat {
         mes.setType(Message.ONLINE);
         mes.setTime(sim.format(new Date()));
         mes.setContent(id + "加入房间");
+        mes.setCount(sessionMap.size());
         sendToAll(mes, session);
     }
 
@@ -54,6 +55,7 @@ public class WebSocketGroupChat {
         mes.setType(Message.OFF_LINE);
         mes.setTime(sim.format(new Date()));
         mes.setContent(id + "离开房间");
+        mes.setCount(sessionMap.size());
         sendToAll(mes, session);
     }
 
