@@ -23,7 +23,13 @@ public class AllControllerAdvice {
      */
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
-    public ResultModel errorHandler(HttpServletRequest req, Exception ex) {
+    public Object errorHandler(HttpServletRequest req, Exception ex) {
+        /*if (ex instanceof org.springframework.web.servlet.NoHandlerFoundException) {
+            ApiJsonModel apiJsonModel = openMapper.getJsonWithUrl(req.getRequestURI().replaceAll("/", ""));
+            if (apiJsonModel != null) {
+                return apiJsonModel.getJson();
+            }
+        }*/
         return ResultUtil.toFail(ex.getMessage(), req.getRequestURL());
     }
 

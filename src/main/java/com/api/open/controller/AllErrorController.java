@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 全局错误处理
  * Created by 003 on 2018/9/3.
@@ -22,7 +24,7 @@ public class AllErrorController implements ErrorController {
 
     @RequestMapping
     @ResponseBody
-    public ResultModel doHandleError() {
+    public ResultModel doHandleError(HttpServletRequest req) {
         return ResultUtil.toFail(null);
     }
 }
