@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableTransactionManagement(proxyTargetClass =true)
+@EnableTransactionManagement(proxyTargetClass = true)
 @MapperScan("com.api.open.dao")
 public class DatasoureApplication {
 
